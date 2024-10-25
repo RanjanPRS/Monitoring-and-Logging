@@ -1,0 +1,31 @@
+OBSERVABILITY:
+-------------
+
+    Insights on the internal state of the system
+        system includes the application, infra and the network
+        app -> resource utilisation,etc
+        infra -> memory, disk utilisation, etc
+        network -> latency, traffic, etc
+    We can also understand why our system is in any particular state
+    3 PILLARS OF OBSERVABILITY:
+
+                        Metrics: offer an overview of performance.
+                        Logs: provide details for in-depth analysis.
+                        Traces: offer insight into request paths and dependencies.
+                        
+        METRICS - Metrics are numeric measurements that provide infor
+                  on system performance and health over time. Typically recorded as time-series data.
+                  EG: CPU usage, memory consumption, request rates, error rates, latency, disk I/O.
+                  show the state of your system at a glance, 
+                  allowing teams to track performance trends n detect anomalies.
+        LOGGING - Logs are detailed, unstructured text records that provide 
+                  timestamped account of events, errors, or changes within a system.
+                  EG: App errors, system warnings, access records, debugging info
+        TRACES -  Traces track the flow of requests through a distributed system,
+                  showing each step as a request moves through various services or components.
+                  EG: Distributed traces in microservices envs that capture the path of a request,
+                  from one service to another.
+                
+    MONITORING aint the same as OBSERVABILITY. It basically focuses on the metrics pillar of OBSERVABILITY
+    MONITORING -> METRICS + ALERTS + DASHBOARD
+            
