@@ -1,4 +1,4 @@
-![Prometheus Architecture](https://github.com/RanjanPRS/Monitoring-and-Logging/blob/main/PROMETHEUS/prometheus_architecture.png)
+![Prometheus Architecture](PROMETHEUS/prometheus architecture.png)
 
 # Prometheus Server Overview
 
