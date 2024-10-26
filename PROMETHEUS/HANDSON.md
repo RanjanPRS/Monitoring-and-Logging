@@ -38,6 +38,7 @@ To query the total number of pod restarts, use the following PromQL:
 ```bash
 kube_pod_container_status_restarts_total
 ```
+![Prometheus Architecture]((https://github.com/RanjanPRS/Monitoring-and-Logging/blob/main/PROMETHEUS/kube_pod_container_status_restarts_total.png))
 
 Create a Pod That Always Crashes
 
