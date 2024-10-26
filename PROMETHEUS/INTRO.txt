@@ -1,0 +1,67 @@
+METRICS?
+--------
+
+Metrics are quantitative measurements that provide insights into the performance,
+health, and resource usage of app
+
+a form of raw time series (TS) data
+
+        Timestamp: The exact time when the measurement was recorded.
+        Value: The measurement itself (EG: CPU usage, memory usage).
+        Labels: Labels are key:value pairs that provide add. context to the metric.
+                They help identify the source or characteristics of the data. (EG: pod name, ns).
+
+    [   
+        { "timestamp": "2024-10-26T10:00:00Z", "value": 50, "labels": { "pod": "nginx-1", "metric": "cpu_usage" } },
+        { "timestamp": "2024-10-26T10:01:00Z", "value": 55, "labels": { "pod": "nginx-1", "metric": "cpu_usage" } }
+    ]
+
+                        EG: tracking CPU usage metrics for a Kubernetes pod, the raw TS data ^
+
+            
+                "timestamp": "2024-10-26T10:00:00Z" -> time of data scrapping
+                                                    -> ecorded on October 26, 2024, at 10:00:00 AM
+                
+                "value": 50 ->  at 10:00 AM, the CPU usage of the pod was 50 units
+                                could be 50% or 50 cores, depending on the context
+
+                "labels": {"pod": "nginx-1", "metric": "cpu_usage"} -> metric is associated 
+                                                                       w/ a specific pod named nginx-1
+                                                                    -> metric being measured, CPU usage
+
+TSDB: Time Series Database (TSDB) is designed to handle time series data,
+----  which consists of sequences of data points indexed in time order.
+      TSDBs are optimized for handling large volumes of time-stamped data efficiently.
+
+PROMETHEUS:
+-----------
+
+open-source monitoring and alerting toolkit designed specifically for reliability and scalability
+in dynamic environments like cloud-native applications and microservices architectures.
+
+originally developed at SoundCloud and is now managed by CNCF
+
+a widely adopted tool in the Kubernetes ecosystem
+
+Prometheus stores metrics as time series data,
+allowing for efficient storage and querying of metrics over time.
+
+Prometheus provides a flexible query language called PromQL (Prometheus Query Language),
+enabling users to select and aggregate metrics in various ways.
+
+Prometheus primarily uses a pull model to collect metrics, meaning it scrapes (polls)
+metrics from configured targets at specified intervals.
+This is particularly useful for dynamic environments like k8s, where services can come and go.
+
+can be integrated w/ grafana and many such tools to visualize the raw ts data
+
+Prometheus uses exporters to collect metrics from different applications and systems.
+Exporters are lightweight applications that expose metrics in a format Prometheus understands.
+
+        USE-CASES:
+        ---------
+                    - Monitoring K8S Clusters: Collecting metrics from nodes, pods, and services to provide
+                                               insights into resource usage, performance, and health.
+                    - App performance: Developers use Prometheus to monitor the performance of
+                                       app, identify bottlenecks and ensure availability.
+                    - alerting: Prometheus helps teams get notified about issues in their systems.
