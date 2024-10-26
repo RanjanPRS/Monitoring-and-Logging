@@ -1,0 +1,13 @@
+minikube start --driver=docker
+
+kubectl create ns monitoring
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm install prometheus prometheus-community/prometheus -n monitoring
+
+kubectl get all -n monitoring
+
+kubectl port-forward service/prometheus-server 9090:80 -n monitoring
+
+localhost:9090
