@@ -41,7 +41,9 @@ Exporters collect metrics from Prometheus targets (various third-party systems l
 
 ### Types
 
-- **Node Exporter**: For hardware metrics
+- **Node Exporter**: For hardware metrics.
+                     Prometheus collectes metrics from the node-exporter thats runnnin as a pod in cluster
+                     via **endpoint /metrics**
 - **MySQL Exporter**: For database metrics
 
 ---
